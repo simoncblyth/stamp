@@ -30,7 +30,6 @@ export IDENTITY="$BASH_SOURCE $(uname -n) $(date)"
 mkdir -p $FOLD
 bin=$FOLD/$name
 
-#defarg="build_run_ana"
 defarg="info_build_run_ls"
 arg=${1:-$defarg}
 
@@ -40,7 +39,6 @@ np_base=..
 NP_BASE=${NP_BASE:-$np_base}
 
 vars="BASH_SOURCE arg bin FOLD REMOTE"
-
 
 if [ "${arg/info}" != "$arg" ]; then 
     for var in $vars ; do printf "%20s : %s \n" "$var" "${!var}" ; done 
