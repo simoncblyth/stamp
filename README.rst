@@ -43,21 +43,18 @@ Working Across Two Machines
 
 Work is often done across two machines. 
 
-1. remote server, batch job submission, C++ data reduction
-2. local laptop, python analysis  
+1. remote server, batch job submission, heavy lifting C++ data reduction
+2. local laptop(or workstation), python data analysis  
 
-However data analysis is best done on your own local laptop.
-That allows you to use the capabilities of your laptop GPU. 
+Data analysis is better done locally with small datasets as you can 
+then benefit from the capabilities of your laptop(workstation) GPU.
+Local analysis is a much better experience because it is so much 
+faster than trying to do analysis on a shared remote server. 
 
-To make this practical you will need to reduce the size 
-of the data by applying selections and data format conversions. 
+However this only becomes practical after you have reduced 
+the size of the data by applying selections and data format conversions. 
 This data reduction is usually done using C++ tools on the remote server. 
-
 Then you are left with files small enough to transferred 
-to your laptop for detailed analysis, which you will often use python for. 
+to your laptop/workstation for detailed analysis, 
+which you will often use python for. 
 
-
-
-
-
- 
