@@ -1,5 +1,28 @@
 #!/bin/bash -l 
+usage(){ cat << EOU
+stamp_test.sh : Simple Test Demonstrating Local/Remote Workflow
+=================================================================
 
+::
+
+    ./stamp_test.sh info   ## list bash variable values
+    ./stamp_test.sh build  ## compile C++ test into executable 
+    ./stamp_test.sh run    ## run the executable
+    ./stamp_test.sh grab   ## rsync FOLD files from remote to local 
+    ./stamp_test.sh ana    ## python analysis, plotting 
+    ./stamp_test.sh ls     ## list files in FOLD   
+
+Simply by having this same code cloned from a git repo 
+on local and remote machines : you can adopt a simple 
+Local/Remote workflow. 
+
+The script automates what you could laboriously do
+in a manual way.  
+
+EOU
+}
+
+cd $(dirname $BASH_SOURCE)
 name=stamp_test 
 
 export FOLD=/tmp/$USER/$name
@@ -8,7 +31,7 @@ mkdir -p $FOLD
 bin=$FOLD/$name
 
 #defarg="build_run_ana"
-defarg="info_build_run"
+defarg="info_build_run_ls"
 arg=${1:-$defarg}
 
 REMOTE=lxslc708.ihep.ac.cn
